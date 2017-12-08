@@ -2,7 +2,7 @@
 
 ![](/hardware/images/header.jpg)
 
-It's a Happy Hardware Holiday for all! Meet the Particle Christmas Tree, a limited edition PCB packed full of cheer with customizable light patterns and holiday tunes. Use your tree with a Particle Photon & Electron to light up the LEDs and play music. Control your tree from the onboard joystick or from the Christmas Tree Web App.
+It's a Happy Hardware Holiday for all! Meet the Particle Christmas Tree, a limited edition PCB packed full of cheer with customizable light patterns and holiday tunes. Use your tree with a Particle Photon or Electron to light up the LEDs and play music. Control your tree from the onboard joystick or from the Christmas Tree Web App.
 
 Learn how to get started below. Happy Holidays from Team Particle!
 
@@ -29,7 +29,7 @@ You can easily flash the firmware using our online IDE - no downloads required. 
 
 ### Joystick
 
-The joystick is a 5 way button: up, down, left, right, and center (push in) the you can reprogram the usage any way you'd like. We have setup the button for you in the Christmas tree firmware to toggle light patterns and music.
+The joystick is a 5 way button: up, down, left, right, and center (push in) then you can reprogram the usage any way you'd like. We have setup the button for you in the Christmas tree firmware to toggle light patterns and music.
 
 |DIR   | PIN |
 |:---  |:--- |
