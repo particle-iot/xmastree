@@ -1,0 +1,30 @@
+@import 'core/variables.scss';
+@import 'core/mixins.scss';
+@import 'core/normalize.scss';
+
+
+// BASE ///////////////////////////////////////////////////////////////////////
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    -webkit-text-size-adjust: none;
+    font-size: $base-font-size;
+    font-family: sans-serif;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body {
+    background-color: $color-white;
+    overflow-y: scroll;
+}
+
+
+// COMPONENTS /////////////////////////////////////////////////////////////////
+@import '../components/login/index.scss';
+@import '../components/xmas-tree/index.scss';

@@ -1,0 +1,27 @@
+// SIZING /////////////////////////////////////////////////////////////////////
+$base-font-size: 10px;
+$base-line-height: 1;
+$content-max-width: (1080px / $base-font-size)  * 1em;
+$content-padding: 3em;
+
+
+// LAYERS /////////////////////////////////////////////////////////////////////
+$layer-background: 1;
+$layer-base: 9;
+$layer-hover: 99;
+$layer-popup: 999;
+$layer-dialog: 9999;
+$layer-modal: 99999;
+$layer-top: 999999;
+
+
+// COLORS /////////////////////////////////////////////////////////////////////
+$color-white: #fff;
+$color-black: #000;
+$color-gray: #ccc;
+$color-red: #EF0035;
+$color-near-white: #f7f7f7;
+$color-spark-blue: #00adef;
+$color-spark-blue-dark: #0093d4;
+
+$gradient-basic: $color-white linear-gradient(to bottom, $color-white 0%, $color-near-white 100%);

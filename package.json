@@ -1,0 +1,58 @@
+{
+  "name": "christmas-tree-app",
+  "version": "1.0.0",
+  "description": "web app to support the Particle-powered christmas tree shaped circuit board",
+  "author": "Particle Industries, Inc",
+  "license": "Apache-2.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:spark/xmastree.git"
+  },
+  "scripts": {
+    "postinstall": "npm run build:debug",
+    "start": "npm run clean && npm run build:debug -- -w & npm run server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm run git:remove:app && npm run build && npm run git:add:app && npm run git:commit:deploy",
+    "lint": "eslint 'src/**/*.js'",
+    "server": "http-server ./tmp -p 4300",
+    "build": "NODE_ENV=production webpack",
+    "build:debug": "NODE_ENV=development PATHS_PUBLIC=./tmp CLIENT_ID=xmas-tree-local-4233 webpack",
+    "build:analyze": "NODE_ENV=analysis PATHS_PUBLIC=./tmp webpack",
+    "git:add:app": "git add ./docs/*",
+    "git:remove:app": "git rm -r ./docs/*",
+    "git:commit:deploy": "git commit -m \"deploy app\"",
+    "docs:config": "node ./bin/generate-config-docs.js",
+    "clean": "rm -r ./tmp/*"
+  },
+  "dependencies": {
+    "convict": "^4.0.1",
+    "create-react-class": "^15.6.2",
+    "lodash": "^4.17.4",
+    "particle-api-js": "^7.0.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-dom-factories": "^1.0.2"
+  },
+  "devDependencies": {
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "copy-webpack-plugin": "^4.2.0",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.11.0",
+    "eslint-config-particle": "^2.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "http-server": "^0.10.0",
+    "node-sass": "^4.6.1",
+    "sass-loader": "^6.0.6",
+    "secure-filters": "^1.1.0",
+    "webpack": "^3.8.1",
+    "webpack-bundle-analyzer": "^2.9.1",
+    "workbox-webpack-plugin": "^2.1.1"
+  },
+  "engines": {
+    "node": "8.x",
+    "npm": "5.x"
+  }
+}

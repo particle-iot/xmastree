@@ -1,0 +1,25 @@
+// STYLES /////////////////////////////////////////////////////////////////////
+@include view-layout('login');
+
+.login-logo {
+	display: block;
+	max-width: 22em;
+	margin: 0 auto;
+	margin-bottom: 6em;
+}
+
+.login-btn {
+	@include particle-button;
+	display: block;
+	margin-bottom: 2.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.login-docs-cta {
+	font-size: 1.25em;
+
+	a {
+		@include particle-link;
+	}
+}
