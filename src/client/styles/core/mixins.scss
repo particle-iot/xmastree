@@ -1,0 +1,269 @@
+// STYLES /////////////////////////////////////////////////////////////////////
+@mixin particle-link {
+	color: $color-spark-blue-dark;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+@mixin particle-button {
+	width: 100%;
+	max-width: 25em;
+	margin: 0;
+	padding: 1.25em;
+	line-height: 1;
+	letter-spacing: 0.1em;
+	font-size: 1.4em;
+	font-weight: bold;
+	border: none;
+	overflow: hidden;
+	white-space: nowrap;
+	text-transform: uppercase;
+	background-color: $color-spark-blue;
+	color: white;
+	cursor: pointer;
+	user-select: none;
+	text-decoration: none;
+	transition: background .2s linear, color .2s linear;
+
+	&:hover {
+		background-color: $color-spark-blue-dark;
+	}
+}
+
+@mixin particle-glyph-button {
+	height: 2.25em;
+	width: 2.25em;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+
+	> svg {
+		width: 100%;
+	}
+
+	&:active {
+		transform: scale(0.9);
+	}
+}
+
+@mixin particle-select {
+	position: relative;
+	display: block;
+	border: 1px solid #bbb;
+	border-radius: .3em;
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+	background-color: $color-white;
+
+	&:after {
+		position: absolute;
+		display: none;
+		top: 50%;
+		right: 1em;
+		width: 0;
+		height: 0;
+		margin-top: -0.3em;
+		border-left: 0.4em solid transparent;
+		border-right: 0.4em solid transparent;
+		border-top: 0.7em solid $color-black;
+		content: " ";
+		pointer-events: none;
+	}
+
+	select {
+		width: 100%;
+		margin: 0;
+		padding: 0.6em 0.8em 0.5em 0.8em;
+		outline: none;
+		cursor: pointer;
+	}
+
+	@supports (-webkit-appearance: none) or (appearance: none) or ((-moz-appearance: none) and (mask-type: alpha)) {
+		&:after {
+			display: block;
+		}
+
+		select {
+			padding-right: 2em;
+			background: none;
+			border: 1px solid transparent;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+
+			&:focus {
+				border-color: #aaa;
+			}
+		}
+	}
+}
+
+
+// LAYOUT /////////////////////////////////////////////////////////////////////
+%layout {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	> main {
+		position: relative;
+		display: flex;
+		width: 100%;
+		flex: 1 0 auto;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	&.layout--centered {
+		> main {
+			justify-content: center;
+		}
+	}
+}
+
+%layout-nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-color: transparent;
+}
+
+%layout-nav-logout {
+	@include particle-glyph-button;
+	height: 5em;
+	width: 5em;
+	margin: 1em;
+	padding: 1em;
+}
+
+%layout-content {
+	width: 100%;
+	max-width: $content-max-width;
+	margin: 0 auto;
+	padding: $content-padding;
+	text-align: center;
+}
+
+%layout-content-inner {}
+
+%layout-status {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 1em;
+	text-align: center;
+
+	> p {
+		margin: 0;
+
+		> a {
+			color: $color-white;
+		}
+	}
+
+	&.is-init {
+		> p:after {
+			content: "\2026"; // ascii code for the ellipsis character
+		}
+	}
+
+	&.is-ok {
+		display: none;
+	}
+
+	&.is-fail {
+		background: $color-red;
+		color: $color-white;
+	}
+}
+
+%layout-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 1em;
+
+	> p {
+		margin: 0.3em 0;
+		font-size: 0.8em;
+		letter-spacing: 0.1em;
+	}
+}
+
+%layout-footer-logo {
+	display: block;
+	width: 61px;
+}
+
+
+@mixin view-layout($viewname){
+	.#{$viewname} {
+		@extend %layout;
+	}
+
+	.#{$viewname}-nav {
+		@extend %layout-nav;
+	}
+
+	.#{$viewname}-nav-logout {
+		@extend %layout-nav-logout;
+	}
+
+	.#{$viewname}-content {
+		@extend %layout-content;
+	}
+
+	.#{$viewname}-content-inner {
+		@extend %layout-content-inner !optional;
+	}
+
+	.#{$viewname}-status {
+		@extend %layout-status;
+	}
+
+	.#{$viewname}-footer {
+		@extend %layout-footer;
+	}
+
+	.#{$viewname}-footer-logo {
+		@extend %layout-footer-logo;
+	}
+}
+
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+// source: https://css-tricks.com/snippets/css/fluid-typography/
+@mixin fluid-type($minViewportWidth, $maxViewportWidth, $minFontSize, $maxFontSize) {
+	$u1: unit($minViewportWidth);
+	$u2: unit($maxViewportWidth);
+	$u3: unit($minFontSize);
+	$u4: unit($maxFontSize);
+
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+		& {
+			font-size: $minFontSize;
+			@media screen and (min-width: $minViewportWidth) {
+				font-size: calc(#{$minFontSize} + #{strip-unit($maxFontSize - $minFontSize)} * ((100vw - #{$minViewportWidth}) / #{strip-unit($maxViewportWidth - $minViewportWidth)}));
+			}
+			@media screen and (min-width: $maxViewportWidth) {
+				font-size: $maxFontSize;
+			}
+		}
+	}
+}

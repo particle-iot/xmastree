@@ -1,0 +1,203 @@
+// MIXINS /////////////////////////////////////////////////////////////////////
+@mixin xmastree-animation-sequenceblink($speed, $steps: 25){
+	$duration: $speed * $steps;
+
+	circle {
+		animation: xmastree-led-blink #{$duration}s step-start 0s infinite;
+	}
+
+	@for $c from 1 through $steps {
+		$ms: ($speed * $c) * -1;
+
+		circle:nth-child(#{$c}) {
+			animation-delay: #{$ms}s;
+		}
+	}
+}
+
+@mixin xmastree-animation-colorflasher($speed, $steps: 25){
+	$duration: $speed * $steps;
+
+	circle {
+		animation: xmastree-led-colors #{$duration}s steps(1, end) 0s infinite;
+	}
+
+	circle:nth-child(even){
+		animation-delay: 0s;
+	}
+
+	circle:nth-child(odd){
+		animation-delay: #{$duration / 2}s;
+	}
+}
+
+
+// STYLES /////////////////////////////////////////////////////////////////////
+@keyframes xmastree-led-blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+@keyframes xmastree-led-colors {
+	0% {
+		fill: #f00;
+	}
+	25% {
+		fill: #009a00;
+	}
+	50% {
+		fill: #0065cd;
+	}
+	75% {
+		fill: #ffce00;
+	}
+}
+
+@include view-layout('xmastree');
+
+.xmastree-status {
+	left: 0;
+	top: 0;
+	width: auto;
+	bottom: auto;
+	font-size: 0.9em;
+	background-color: $color-gray;
+	border-radius: 0 0 0.5em 0;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+
+	@media (min-width: 1200px) {
+		top: auto;
+		right: 0;
+		bottom: 0;
+		left: auto;
+		border-radius: 0.5em 0 0 0;
+	}
+}
+
+.xmastree-device-picker {}
+
+.xmastree-device-list {
+	@include particle-select();
+	display: inline-block;
+	width: 10em;
+	font-size: 1em;
+}
+
+.xmastree-device {
+	position: fixed;
+	left: 50%;
+	bottom: 0;
+	max-width: 17em;
+	padding: 0.75em 3em 0.75em 1em;
+	background-color: $color-black;
+	border-radius: 0.5em 0.5em 0 0;
+	transform: translate(-50%, 0);
+	white-space: nowrap;
+	z-index: $layer-hover;
+
+	> h3 {
+		display: inline-block;
+		width: 100%;
+		margin: 0 0.75em 0 0;
+		color: $color-white;
+		overflow: hidden;
+		text-align: left;
+		text-overflow: ellipsis;
+		vertical-align: middle;
+	}
+
+	> button {
+		@include particle-glyph-button;
+		height: 1.5em;
+		width: 1.5em;
+		vertical-align: middle;
+
+		path {
+			fill: $color-white;
+		}
+	}
+}
+
+.xmastree-ctrls {
+	$minWidth: 320px;
+	$maxWidth: 1200px;
+	$minFont: 10px;
+	$maxFont: 16px;
+	@include fluid-type($minWidth, $maxWidth, $minFont, $maxFont);
+	max-width: 255px;
+	margin: 0 auto;
+}
+
+.xmastree-song-picker,
+.xmastree-animation-picker {
+	padding: 1em;
+
+	> label {
+		display: block;
+		margin-bottom: 0.5em;
+		font-size: 1.25em;
+	}
+
+	> button {
+		@include particle-glyph-button;
+		display: inline-block;
+		height: 2.5em;
+		width: 2.5em;
+		padding: 0.25em;
+		border: 1px solid #ccc;
+		border-radius: 0.4em;
+		background-color: $color-white;
+		vertical-align: middle;
+
+		&:active {
+			transform: none;
+		}
+	}
+}
+
+.xmastree-song-list,
+.xmastree-animation-list {
+	@include particle-select();
+	display: inline-block;
+	width: 4em;
+	margin-left: 0.5em;
+	font-size: 1em;
+	vertical-align: middle;
+}
+
+.xmastree-tree {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	height: 100vh;
+	width: calc(100vmin * (1.13/1));
+	margin: 0;
+	transform: translate(-50%, 0);
+	pointer-events: none;
+	z-index: -1;
+
+	> svg {
+		height: 100%;
+		width: 100%;
+	}
+
+	circle {
+		fill: $color-black;
+	}
+
+	&.is-disconnected {
+		circle {
+			fill: $color-gray;
+		}
+	}
+
+	&.is-busy {
+		@include xmastree-animation-sequenceblink(0.03);
+	}
+
+	&.is-animating {
+		@include xmastree-animation-colorflasher(0.025);
+	}
+}
