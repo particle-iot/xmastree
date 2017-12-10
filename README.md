@@ -15,9 +15,15 @@ Learn how to get started below. Happy Holidays from Team Particle!
 
 ## STEPS 
 
-You can setup the tree in a matter of minutes. Insert the Photon into the socket, plug in the USB power supply, flash the  christmas tree firmware, and spread the cheer!
+You can setup the tree in a matter of minutes.
 
-You can easily flash the firmware using our online IDE - no downloads required. Visit [build.particle.io](https://go.particle.io/shared_apps/5a2ad3e7597791b71b0010e2) to grab the code.
+1. Insert the Photon into the socket
+1. Plug in the USB power supply
+1. Flash [the Christmas tree firmware from the Web IDE][Firmware shared app] - no downloads required.
+1. [Open the web interface][Web interface] and spread the cheer!
+
+[Firmware shared app]: https://go.particle.io/shared_apps/5a2ad3e7597791b71b0010e2
+[Web interface]: https://spark.github.io/xmastree
 
 <p align="center">
 <img src="/hardware/images/steps-all.png">
@@ -93,7 +99,15 @@ You can use the bottom header to mount the tree on a breadboard and power/contro
 <img src="/hardware/images/webinterface_preview.png" width=400>
 </a></p>
 
-There is a hosted version of the web interface you can use to control your tree, available at [https://spark.github.io/xmastree](https://spark.github.io/xmastree). Simply login with your Particle account, select your device and you'll be able to control the LEDs and music from a desktop or mobile browser.
+There is [a hosted version of the web interface you can use to control your tree][Web interface]. Simply login with your Particle account, select your device and you'll be able to control the LEDs and music from a desktop or mobile browser.
+
+## MODIFYING THE FIRMWARE
+
+[![firmware](https://img.shields.io/badge/Particle%20Shared%20App-XMASTREE-blue.svg?style=for-the-badge&colorA=00aedf&colorB=555555)][Firmware shared app]
+
+Import the firmware to your Particle account in the Web IDE with the button above. You'll be
+able to add new songs or tweak the functionality to your heart's
+content.
 
 ## CONNECT
 
