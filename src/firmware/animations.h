@@ -15,14 +15,15 @@
  *
  */
 
-#define ANIMATION_COUNT     3
+#define ANIMATION_COUNT     4
 
 #define WHITEOVERRAINBOW    0
 #define RAINBOWFADE2WHITE   1
 #define PULSEWHITE          2
+#define REDGREEN            3
 
 /* Animation List */
-String animationList = "White Over Rainbow, Rainbow Fade To White, Pulse White";
+String animationList = "White Over Rainbow, Rainbow Fade To White, Pulse White, Red on Green";
 
 /* An indicator to exit the current LED animation */
 bool changeAnimation = false;
@@ -238,3 +239,20 @@ void pulseWhite(uint8_t wait)
     }
 }
 
+void redGreen(uint8_t wait)
+{
+    uint16_t j = 0;
+    while(true) {
+
+        if (changeAnimation)
+            return;
+
+        for (uint16_t i = 0; i < leds.numPixels(); i++) {
+            leds.setPixelColor(i, (i + j) % 3 == 0 ? leds.Color(255,0,0) : leds.Color(0,255,0));
+        }
+        j = (j + 1) % 3;
+        
+        leds.show();
+        delayAnimation(wait);
+    }
+}
