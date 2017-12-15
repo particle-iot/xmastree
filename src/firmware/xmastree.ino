@@ -1,6 +1,3 @@
-// This #include statement was automatically added by the Particle IDE.
-#include <dotstar.h>
-
 /*
  *      Copyright 2017 Particle Industries, Inc.
  *
@@ -32,6 +29,7 @@
  */
 
 #include "xmastree.h"       // All macros (#define) are in xmastree.h
+#include <dotstar.h>
 
 /* Project name and version */
 #define WHOAMI              "XmasTree"
@@ -61,7 +59,7 @@ bool repeatSong = FALSE;
 volatile int buttonState = BUTTON_NONE;
 
 /* Create an instance for the xmasTree LEDs, each LED controlled by two pins, DATA and Clock */
-Adafruit_DotStar leds = Adafruit_DotStar(TOTAL_LED, PIN_LED_DATA, PIN_LED_CLOCK);
+Adafruit_DotStar leds = Adafruit_DotStar(TOTAL_LED, PIN_LED_DATA, PIN_LED_CLOCK, DOTSTAR_BGR);
 
 /* Two threads will be used for processing songs and LED animations */
 Thread *animationWorker, *songWorker;
@@ -430,6 +428,8 @@ void processAnimations()
                 rainbowFade2White(3, 6, 1);
             else if (currentAnimation == PULSEWHITE)
                 pulseWhite(5);
+            else if (currentAnimation == REDGREEN)
+                redGreen(500);
         }
 
         delay(250);
