@@ -444,13 +444,15 @@ void processSongs()
         changeSong = false;
 
         if ( (currentState == STATE_BOTH) || (currentState == STATE_SONG) ) {
-            if (currentSong == 0)
+            if (currentSong == SONG_SILENTNIGHT)
+                silentNight();
+            else if (currentSong == SONG_JOYTOTHEWORLD)
                 joyToTheWorld();
-            else if (currentSong == 1)
+            else if (currentSong == SONG_WEWHISHYOUAMERRYXMAS)
                 weWishYouAMerryXmas();
-            else if (currentSong == 2)
+            else if (currentSong == SONG_RUDOLFTHEREDNOSEDREINDEER)
                 rudolfTheRedNosedReindeer();
-            else if (currentSong == 3)
+            else if (currentSong == SONG_JINGLEBELLS)
                 jingleBells();
         }
 
