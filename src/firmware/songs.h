@@ -17,11 +17,11 @@
 
 #define SONG_COUNT                          5
 
-#define SONG_SILENTNIGHT                    0
-#define SONG_JOYTOTHEWORLD                  1
-#define SONG_WEWHISHYOUAMERRYXMAS           2
-#define SONG_RUDOLFTHEREDNOSEDREINDEER      3
-#define SONG_JINGLEBELLS                    4
+#define SONG_JOYTOTHEWORLD                  0
+#define SONG_WEWHISHYOUAMERRYXMAS           1
+#define SONG_RUDOLFTHEREDNOSEDREINDEER      2
+#define SONG_JINGLEBELLS                    3
+#define SONG_SILENTNIGHT                    4
 
 #define   Do        523/2
 #define  Do_        1046/2
@@ -60,7 +60,7 @@
  */
 
 /* Song List */
-String songList = "Silent Night, Joy To The World, We Wish You A Merry X'mas, Rudolf the Red Nosed Reindeer, Jingle Bells";
+String songList = "Joy To The World, We Wish You A Merry Xmas, Rudolf the Red Nosed Reindeer, Jingle Bells, Silent Night";
 
 /* An indicator to exit the current song */
 bool changeSong = false;
@@ -484,23 +484,7 @@ const float notes_jingleBells[] = {
  *
  */
 
-void silentNight()
-{
-    int noteCount = NOTE_COUNT_SILENTNIGHT;
-    
-    for (int i = 0; i < noteCount * 2; i += 2) {
-        if (changeSong)
-            return;
-            
-        tone(PIN_BUZZER, notes_silentNight[i], notes_silentNight[i+1]);
-        delay(notes_silentNight[i+1] * 1.3);
-    }
-  
-    if (!repeatSong)
-        nextSong();
-}
-
-void joyToTheWorld()
+void playJoyToTheWorld()
 {
     int noteCount = NOTE_COUNT_JOYTOTHEWORLD;
     
@@ -516,7 +500,7 @@ void joyToTheWorld()
         nextSong();
 }
 
-void weWishYouAMerryXmas()
+void playWeWishYouAMerryXmas()
 {
     int noteCount = NOTE_COUNT_WEWISHYOUAMERRYXMAS;
 
@@ -532,7 +516,7 @@ void weWishYouAMerryXmas()
         nextSong();
 }
 
-void rudolfTheRedNosedReindeer()
+void playRudolfTheRedNosedReindeer()
 {
     int noteCount = NOTE_COUNT_RUDOLFTHEREDNOSEDREINDEER;
 
@@ -548,7 +532,7 @@ void rudolfTheRedNosedReindeer()
         nextSong();
 }
 
-void jingleBells()
+void playJingleBells()
 {
     int noteCount = NOTE_COUNT_JINGLEBELLS;
 
@@ -560,6 +544,22 @@ void jingleBells()
         delay(notes_jingleBells[i+2]);
     }
     
+    if (!repeatSong)
+        nextSong();
+}
+
+void playSilentNight()
+{
+    int noteCount = NOTE_COUNT_SILENTNIGHT;
+    
+    for (int i = 0; i < noteCount * 2; i += 2) {
+        if (changeSong)
+            return;
+            
+        tone(PIN_BUZZER, notes_silentNight[i], notes_silentNight[i+1]);
+        delay(notes_silentNight[i+1] * 1.3);
+    }
+  
     if (!repeatSong)
         nextSong();
 }

@@ -22,7 +22,7 @@ You can setup the tree in a matter of minutes.
 1. Flash [the Christmas tree firmware from the Web IDE][Firmware shared app] - no downloads required.
 1. [Open the web interface][Web interface] and spread the cheer!
 
-[Firmware shared app]: https://go.particle.io/shared_apps/5a3496376635610a94000981
+[Firmware shared app]: https://go.particle.io/shared_apps/5a376f09e59b629f5c000c8e
 [Web interface]: https://spark.github.io/xmastree
 
 <p align="center">
