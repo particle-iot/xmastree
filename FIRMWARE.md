@@ -29,12 +29,6 @@ The CENTER button controls the tree with four states by toggling the following s
 
 *	(S) --> Play Both Song and Animation --> Stop Both --> Play Animation Only --> Play Song Only --> (S) 
 
-## Latest Firmware
-
-You can always find the latest firmware from the Web IDE by clicking the following link and then flashing the firmware to your Particle device quickly. After that, you can create your own LED animations and songs for the Xmas Tree. Using the Particle CLI is also possible to compile and load the firmware to your devices.
-
-* [Latest firmware on the Particle Web IDE](https://go.particle.io/shared_apps/5a2ad3e7597791b71b0010e2)
-
 ## Source Files
 
 ### xmastree.ino

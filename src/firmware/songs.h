@@ -15,12 +15,36 @@
  *
  */
 
-#define SONG_COUNT                          4
+#define SONG_COUNT                          5
 
 #define SONG_JOYTOTHEWORLD                  0
 #define SONG_WEWHISHYOUAMERRYXMAS           1
 #define SONG_RUDOLFTHEREDNOSEDREINDEER      2
 #define SONG_JINGLEBELLS                    3
+#define SONG_SILENTNIGHT                    4
+
+#define   Do        523/2
+#define  Do_        1046/2
+#define   Re        587/2
+#define  Re_        1175/2
+#define   Mi        659/2
+#define  Mi_        1318/2
+#define   Fa        698/2
+#define  Fa_        1397/2
+#define   So        784/2
+#define   La        880/2
+#define   Si        988/2
+#define  _Si        494/2
+#define  _La        440/2
+#define  _So        392/2
+ 
+#define   bt        323
+#define   bt2       bt*2
+#define   bt3       bt*3
+#define   bt6       bt*6
+#define   bt1_2     bt/2
+#define   bt3_2     (bt/2)*3
+#define   bt1_4     bt/4
 
 /*
  *      Credit:
@@ -36,7 +60,7 @@
  */
 
 /* Song List */
-String songList = "Joy To The World, We Wish You A Merry X'mas, Rudolf the Red Nosed Reindeer, Jingle Bells";
+String songList = "Joy To The World, We Wish You A Merry Xmas, Rudolf the Red Nosed Reindeer, Jingle Bells, Silent Night";
 
 /* An indicator to exit the current song */
 bool changeSong = false;
@@ -51,6 +75,74 @@ bool delaySong(unsigned duration)
   
     return changeSong;
 }
+
+/*
+ *
+ *      Silent Night
+ *
+ *      More Information:
+ *          https://en.wikipedia.org/wiki/Silent_Night
+ *
+ */
+
+#define NOTE_COUNT_SILENTNIGHT   46
+ 
+const int notes_silentNight[] = {
+    // Note, Duration
+    So, bt3_2,
+    La, bt1_2, 
+    So, bt, 
+    Mi, bt3, 
+    
+    So, bt3_2,
+    La, bt1_2,
+    So, bt, 
+    Mi, bt3,
+    
+    Re_, bt2, 
+    Re_, bt1_2, 
+    Si, bt3, 
+    
+    Do_, bt2, 
+    Do_, bt1_2, 
+    So, bt3,
+    
+    La, bt2, 
+    La, bt, 
+    Do_, bt3_2, 
+    Si, bt1_2, 
+    La, bt, 
+    So, bt3_2, 
+    La, bt1_2, 
+    So, bt, 
+    Mi, bt3,
+    
+    La, bt2, 
+    La, bt, 
+    Do_, bt3_2, 
+    Si, bt1_2, 
+    La, bt, 
+    So, bt3_2, 
+    La, bt1_2, 
+    So, bt, 
+    Mi, bt3,
+    
+    Re_, bt2, 
+    Re_, bt, 
+    Fa_, bt3_2, 
+    Re_, bt1_2, 
+    Si, bt, 
+    Do_, bt3,
+    
+    Mi_, bt3,
+    Do_, bt, 
+    So, bt, 
+    Mi, bt, 
+    So, bt3_2, 
+    Fa, bt1_2, 
+    Re, bt, 
+    Do, bt6
+};
 
 /*
  *
@@ -392,7 +484,7 @@ const float notes_jingleBells[] = {
  *
  */
 
-void joyToTheWorld()
+void playJoyToTheWorld()
 {
     int noteCount = NOTE_COUNT_JOYTOTHEWORLD;
     
@@ -408,7 +500,7 @@ void joyToTheWorld()
         nextSong();
 }
 
-void weWishYouAMerryXmas()
+void playWeWishYouAMerryXmas()
 {
     int noteCount = NOTE_COUNT_WEWISHYOUAMERRYXMAS;
 
@@ -424,7 +516,7 @@ void weWishYouAMerryXmas()
         nextSong();
 }
 
-void rudolfTheRedNosedReindeer()
+void playRudolfTheRedNosedReindeer()
 {
     int noteCount = NOTE_COUNT_RUDOLFTHEREDNOSEDREINDEER;
 
@@ -440,7 +532,7 @@ void rudolfTheRedNosedReindeer()
         nextSong();
 }
 
-void jingleBells()
+void playJingleBells()
 {
     int noteCount = NOTE_COUNT_JINGLEBELLS;
 
@@ -452,6 +544,22 @@ void jingleBells()
         delay(notes_jingleBells[i+2]);
     }
     
+    if (!repeatSong)
+        nextSong();
+}
+
+void playSilentNight()
+{
+    int noteCount = NOTE_COUNT_SILENTNIGHT;
+    
+    for (int i = 0; i < noteCount * 2; i += 2) {
+        if (changeSong)
+            return;
+            
+        tone(PIN_BUZZER, notes_silentNight[i], notes_silentNight[i+1]);
+        delay(notes_silentNight[i+1] * 1.3);
+    }
+  
     if (!repeatSong)
         nextSong();
 }

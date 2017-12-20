@@ -22,7 +22,7 @@ You can setup the tree in a matter of minutes.
 1. Flash [the Christmas tree firmware from the Web IDE][Firmware shared app] - no downloads required.
 1. [Open the web interface][Web interface] and spread the cheer!
 
-[Firmware shared app]: https://go.particle.io/shared_apps/5a341281663561e5ef0000c0
+[Firmware shared app]: https://go.particle.io/shared_apps/5a376f09e59b629f5c000c8e
 [Web interface]: https://spark.github.io/xmastree
 
 <p align="center">
@@ -108,6 +108,8 @@ There is [a hosted version of the web interface you can use to control your tree
 Import the firmware to your Particle account in the Web IDE with the button above. You'll be
 able to add new songs or tweak the functionality to your heart's
 content.
+
+Click [here](FIRMWARE.md) for more information about the Xmas Tree firmware.
 
 ## CONNECT
 

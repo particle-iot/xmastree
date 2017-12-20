@@ -444,14 +444,16 @@ void processSongs()
         changeSong = false;
 
         if ( (currentState == STATE_BOTH) || (currentState == STATE_SONG) ) {
-            if (currentSong == 0)
-                joyToTheWorld();
-            else if (currentSong == 1)
-                weWishYouAMerryXmas();
-            else if (currentSong == 2)
-                rudolfTheRedNosedReindeer();
-            else if (currentSong == 3)
-                jingleBells();
+            if (currentSong == SONG_JOYTOTHEWORLD)
+                playJoyToTheWorld();
+            else if (currentSong == SONG_WEWHISHYOUAMERRYXMAS)
+                playWeWishYouAMerryXmas();
+            else if (currentSong == SONG_RUDOLFTHEREDNOSEDREINDEER)
+                playRudolfTheRedNosedReindeer();
+            else if (currentSong == SONG_JINGLEBELLS)
+                playJingleBells();
+            else if (currentSong == SONG_SILENTNIGHT)
+                playSilentNight();
         }
 
         delay(2000);
@@ -576,4 +578,3 @@ void loop()
     /* Process the Cloud events */
     processCloud();
 }
-
