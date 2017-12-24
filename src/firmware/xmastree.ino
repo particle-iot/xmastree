@@ -430,6 +430,8 @@ void processAnimations()
                 pulseWhite(5);
             else if (currentAnimation == REDGREEN)
                 redGreen(500);
+            else if (currentAnimation == SPARKCYAN)
+                sparkCyan(3);
         }
 
         delay(250);
@@ -578,3 +580,4 @@ void loop()
     /* Process the Cloud events */
     processCloud();
 }
+
