@@ -26,7 +26,7 @@ module.exports = convict({
 	urls: {
 		repo: {
 			doc: 'url to the github repo hosting the source code for this app',
-			default: 'https://github.com/spark/xmastree',
+			default: 'https://github.com/particle-iot/xmastree',
 			format: 'url',
 			env: 'URLS_REPO'
 		},

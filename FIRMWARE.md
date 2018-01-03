@@ -111,6 +111,6 @@ You can add your own events to the firmware and use the [console](https://consol
 
 ## References
 
-* [Main Page](https://github.com/spark/xmastree)
+* [Main Page](https://github.com/particle-iot/xmastree)
 * [User Manual](/README.md)
 * [Web App](https://spark.github.io/xmastree)

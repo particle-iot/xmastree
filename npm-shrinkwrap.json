@@ -5603,7 +5603,7 @@
       "requires": {
         "babel-runtime": "6.26.0",
         "form-data": "2.3.1",
-        "stream-http": "https://github.com/spark/stream-http/archive/v2.2.1.tar.gz",
+        "stream-http": "https://github.com/particle-iot/stream-http/archive/v2.2.1.tar.gz",
         "superagent": "3.8.1",
         "superagent-prefix": "0.0.2"
       },
@@ -5614,7 +5614,7 @@
           "integrity": "sha1-byIAO6rPADzNKHr+aHIVH93FhXk="
         },
         "stream-http": {
-          "version": "https://github.com/spark/stream-http/archive/v2.2.1.tar.gz",
+          "version": "https://github.com/particle-iot/stream-http/archive/v2.2.1.tar.gz",
           "integrity": "sha1-aSuHKY5JH3u0Z6eojs9Ygi/P32g=",
           "requires": {
             "builtin-status-codes": "2.0.0",

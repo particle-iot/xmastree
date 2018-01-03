@@ -43,7 +43,7 @@ Here's the list of the most important variables and their values:
 | -------------------: | ----------- | ------- |
 | PATHS_PUBLIC | public directory used to serve static files | `./docs` |
 | PATHS_CLIENT_SRC | location of client application files | `./src/client` |
-| URLS_REPO | url to the github repo hosting the source code for this app | `https://github.com/spark/xmastree` |
+| URLS_REPO | url to the github repo hosting the source code for this app | `https://github.com/particle-iot/xmastree` |
 | URLS_APP | url to this website | `"https://spark.github.io/xmastree` |
 | CLIENT_ID | the particle client id for this app (primarily for oauth) | `xmastree-1511` |
 | PARTICLE_API_URL | root url for the particle api | `https://api.particle.io` |
