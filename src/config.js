@@ -40,7 +40,7 @@ module.exports = convict({
 	client: {
 		id: {
 			doc: 'the particle client id for this app (primarily for oauth)',
-			default: 'xmastree-1511',
+			default: 'xmastree-prod-1784',
 			format: String,
 			env: 'CLIENT_ID'
 		}
