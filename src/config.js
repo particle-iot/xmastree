@@ -32,7 +32,7 @@ module.exports = convict({
 		},
 		app: {
 			doc: 'url to this website',
-			default: '"https://spark.github.io/xmastree',
+			default: 'https://particle-iot.github.io/xmastree',
 			format: 'url',
 			env: 'URLS_APP'
 		},
