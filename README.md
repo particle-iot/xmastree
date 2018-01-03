@@ -23,7 +23,7 @@ You can setup the tree in a matter of minutes.
 1. [Open the web interface][Web interface] and spread the cheer!
 
 [Firmware shared app]: https://go.particle.io/shared_apps/5a3f997de240b9471e001108
-[Web interface]: https://spark.github.io/xmastree
+[Web interface]: https://particle-iot.github.io/xmastree
 
 <p align="center">
 <img src="/hardware/images/steps-all.png">
@@ -95,7 +95,7 @@ You can use the bottom header to mount the tree on a breadboard and power/contro
 ## USING THE WEB INTERFACE
 
 <p align="center">
-<a href="https://spark.github.io/xmastree" target="_blank">
+<a href="https://particle-iot.github.io/xmastree" target="_blank">
 <img src="/hardware/images/webinterface_preview.png" width=400>
 </a></p>
 

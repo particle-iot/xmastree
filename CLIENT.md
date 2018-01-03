@@ -18,7 +18,7 @@
 
 ## Installation
 1. Install Node.js [node v8.x and npm v5.x are required]
-1. Clone this repository `$ git clone git@github.com:spark/xmastree`
+1. Clone this repository `$ git clone git@github.com:particle-iot/xmastree`
 1. Install dependencies `$ npm install`
 1. View available tasks `$ npm run`
 1. Start your local development server `$ npm start`
@@ -43,9 +43,9 @@ Here's the list of the most important variables and their values:
 | -------------------: | ----------- | ------- |
 | PATHS_PUBLIC | public directory used to serve static files | `./docs` |
 | PATHS_CLIENT_SRC | location of client application files | `./src/client` |
-| URLS_REPO | url to the github repo hosting the source code for this app | `https://github.com/spark/xmastree` |
-| URLS_APP | url to this website | `"https://spark.github.io/xmastree` |
-| CLIENT_ID | the particle client id for this app (primarily for oauth) | `xmastree-1511` |
+| URLS_REPO | url to the github repo hosting the source code for this app | `https://github.com/particle-iot/xmastree` |
+| URLS_APP | url to this website | `https://particle-iot.github.io/xmastree` |
+| CLIENT_ID | the particle client id for this app (primarily for oauth) | `xmastree-prod-1784` |
 | PARTICLE_API_URL | root url for the particle api | `https://api.particle.io` |
 <!-- config-docs-end -->
 

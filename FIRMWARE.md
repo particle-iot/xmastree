@@ -70,7 +70,7 @@ The [animations.h](/src/firmware/animations.h) file contains some pre-defined LE
 
 ### Cloud Variables/Functions/Events
 
-The cloud items are exposed for the [Web App](https://spark.github.io/xmastree) to control the tree over the Internet so that you can control the tree remotely.
+The cloud items are exposed for the [Web App](https://particle-iot.github.io/xmastree) to control the tree over the Internet so that you can control the tree remotely.
 
 #### Variables
 
@@ -111,6 +111,6 @@ You can add your own events to the firmware and use the [console](https://consol
 
 ## References
 
-* [Main Page](https://github.com/spark/xmastree)
+* [Main Page](https://github.com/particle-iot/xmastree)
 * [User Manual](/README.md)
-* [Web App](https://spark.github.io/xmastree)
+* [Web App](https://particle-iot.github.io/xmastree)

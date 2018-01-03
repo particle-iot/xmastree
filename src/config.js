@@ -26,13 +26,13 @@ module.exports = convict({
 	urls: {
 		repo: {
 			doc: 'url to the github repo hosting the source code for this app',
-			default: 'https://github.com/spark/xmastree',
+			default: 'https://github.com/particle-iot/xmastree',
 			format: 'url',
 			env: 'URLS_REPO'
 		},
 		app: {
 			doc: 'url to this website',
-			default: '"https://spark.github.io/xmastree',
+			default: 'https://particle-iot.github.io/xmastree',
 			format: 'url',
 			env: 'URLS_APP'
 		},
@@ -40,7 +40,7 @@ module.exports = convict({
 	client: {
 		id: {
 			doc: 'the particle client id for this app (primarily for oauth)',
-			default: 'xmastree-1511',
+			default: 'xmastree-prod-1784',
 			format: String,
 			env: 'CLIENT_ID'
 		}
