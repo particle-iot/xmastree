@@ -7,7 +7,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:spark/xmastree.git"
+    "url": "git@github.com:particle-iot/xmastree.git"
   },
   "scripts": {
     "postinstall": "npm run build:debug",

@@ -18,7 +18,7 @@
 
 ## Installation
 1. Install Node.js [node v8.x and npm v5.x are required]
-1. Clone this repository `$ git clone git@github.com:spark/xmastree`
+1. Clone this repository `$ git clone git@github.com:particle-iot/xmastree`
 1. Install dependencies `$ npm install`
 1. View available tasks `$ npm run`
 1. Start your local development server `$ npm start`
