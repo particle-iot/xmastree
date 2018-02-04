@@ -52,7 +52,7 @@
  *              - Andy Tran (extramaster), 2015
  *          https://www.extramaster.net/tools/midiToArduino/
  *
- *      The songs are gernerated from:
+ *      The songs are generated from:
  *          https://www.extramaster.net/tools/midiToArduino/processFile/?url=http://www.jump-gate.com/christmas/music/midi/joyworld.mid&track=1
  *          https://www.extramaster.net/tools/midiToArduino/processFile/?url=http://www.jump-gate.com/christmas/music/midi/wewishu2.mid&track=3
  *          https://www.extramaster.net/tools/midiToArduino/processFile/?url=http://www.jump-gate.com/christmas/music/midi/rudolf.mid&track=1
